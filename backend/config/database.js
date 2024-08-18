@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 // import dotenv from "dotenv"
 
 // dotenv.config({ path: "backend/config/databse.js" })
-
+// /sladfjasldf
 const connectDatabase = () => {
 
     mongoose.connect(process.env.DB_URI).then((data) => {
