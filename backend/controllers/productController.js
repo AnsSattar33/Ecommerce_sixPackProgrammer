@@ -98,3 +98,26 @@ export const getAllProducts = async (req, res) => {
         console.log("error in getAllProducts = ", error)
     }
 }
+
+// get one product
+export const getOneProduct = async (req, res) => {
+
+    try {
+        const productId = req.params.id
+
+        const product = await Product.findOne({ _id: productId })
+        if (!product) {
+            return res.status(401).json({
+                message: "product not found",
+                success: false
+            })
+        }
+
+        return res.status(201).json({
+            message: "Product Found",
+            product
+        })
+    } catch (error) {
+        console.log("error in getOneProduct = ", error)
+    }
+}
